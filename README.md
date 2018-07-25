@@ -1,2 +1,2 @@
 # Xbox360_RC_Car
-Xbox 360 controlled RC car
+How to make a Xbox 360 controlled RC car
