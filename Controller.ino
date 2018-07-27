@@ -5,7 +5,7 @@
 File Name:      Controller.ino
 Description:    Xbox controller button functions. Button behavior is handled
                 in this file, every function is mapped to a specific button 
-		from the xbox controller.
+                from the xbox controller.
 ****************************************************************************/
 #include "Controller.h"
 #include "BluetoothTerm.h"
@@ -261,7 +261,7 @@ int16_t xbox_LeftHat( XBOXRECV & Xbox ) {
     motor.setM1Velocity( velocity );
   }
 
-  joystickData = TRUE;
+  joystickData = true;
   
   print( "Velocity: " );
   print( velocity );
@@ -299,7 +299,7 @@ int16_t xbox_RightHat( XBOXRECV & Xbox ) {
     motor.setM2Velocity( turn );
   }
 
-  joystickData = TRUE;
+  joystickData = true;
 
   print( "Turn: " );
   print( turn );
