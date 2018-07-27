@@ -14,6 +14,7 @@ Sources of Help: Example sketch for the Xbox Wireless Reciver library
                    - developed by Kristian Lauszus
                    - Example "XBOXRECV"
 Libraries Used:
+                 - https://github.com/jimenezjose/L298N
                  - https://github.com/PaulStoffregen/SoftwareSerial
                  - https://github.com/felis/USB_Host_Shield_2.0
 ****************************************************************************/
@@ -115,9 +116,17 @@ void loop() {
       /* controller feedback system - rumble current draw from dc motors */
       leftRumble  = map( abs(velocity), 0, MAX_SPEED, 0, MAX_RUMBLE );
       rightRumble = map( abs(turn), 0, MAX_TURN, 0, MAX_RUMBLE );
-      Xbox.setRumbleOn( leftRumble / 4, rightRumble / 2);
+      Xbox.setRumbleOn( leftRumble / VEL_RUMBLE, rightRumble / TUR_RUMBLE );
     }
     
+  }
+  else {
+    /* controller out of range */
+    println( "Xbox 360 controller out of Range." );
+    velocity = 0;
+    turn = 0;
+    motor.setM1Velocity( velocity );
+    motor.setM2Velocity( turn );
   }
   
 }

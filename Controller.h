@@ -12,21 +12,24 @@
 #define MIN_HAT_VAL -32768
 #define MAX_KNOB_VAL 1023
 #define MAX_SPEED    400
-#define MIN_TURN     -255
-#define MAX_TURN     255
+#define MIN_TURN     -200
+#define MAX_TURN     200
 #define MAX_TRIGGER  255
 #define MAX_RUMBLE   255
 /* number of buttons per category */
 #define NUM_OF_CLICK_BUTTONS 15
 #define NUM_OF_JOYSTICKS     2
 #define NUM_OF_TRIGGERS      2
+/* rumble intensity */
+#define VEL_RUMBLE 4
+#define TUR_RUMBLE 2
 
 #define BUTTON_CLICK_LIST        { A, B, Y, X, L1, R1, BACK, START, XBOX, UP,\
                                    DOWN, LEFT, RIGHT, L3, R3 }               
 #define XBOX_CLICK_BUTTON_FUNCS  { xbox_A, xbox_B, xbox_Y, xbox_X, xbox_L1, \
                                    xbox_R1, xbox_BACK, xbox_START, xbox_HOME,\
-				   xbox_UP, xbox_DOWN, xbox_LEFT, xbox_RIGHT, \
-				   xbox_L3, xbox_R3 }
+                                   xbox_UP, xbox_DOWN, xbox_LEFT, xbox_RIGHT, \
+                                   xbox_L3, xbox_R3 }
                                    
 #define JOYSTICK_LIST            { LeftHatY, RightHatX }
 #define XBOX_JOYSTICK_FUNCS      { xbox_LeftHat, xbox_RightHat }
