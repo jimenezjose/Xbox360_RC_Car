@@ -81,7 +81,7 @@ void setup() {
 void loop() {
   Usb.Task();  /* retrieve new data from usb port */  
 
-  if( Xbox.XboxReceiverConnected  && Xbox.Xbox360Connected[ PLAYER_ONE ] ) {
+  if( Xbox.XboxReceiverConnected && Xbox.Xbox360Connected[ PLAYER_ONE ] ) {
     /* Player One connected to Xbox Receiver */
     
     for( int index = 0; index < NUM_OF_JOYSTICKS; index++ ) {
@@ -94,7 +94,7 @@ void loop() {
     if( joystickData ) {
       /* end of current joystick data */
       println();
-      joystickData = FALSE;
+      joystickData = false;
     }  
     
     for( int index = 0; index < NUM_OF_CLICK_BUTTONS; index++ ) {
