@@ -3,7 +3,7 @@
                                                 Jose Jorge Jimenez-Olivas
                                                 July 25, 2018
 
-                             XBOX 360 RC Car
+                           XBOX 360 RC Car
 
 File Name:       Xbox_RC_CarHack.ino
 Description:     This program is for a fully functional rc car, controlled
@@ -120,8 +120,8 @@ void loop() {
     }
     
   }
-  else {
-    /* controller out of range */
+  else if( velocity || turn ) {
+    /* Failure Safety */
     println( "Xbox 360 controller out of Range." );
     velocity = 0;
     turn = 0;
