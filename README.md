@@ -9,10 +9,13 @@ How to make an Xbox 360 controlled RC car.
 
 __Note__:
 
-      The material needed to make the rc car compatible with an Xbox 360 controller is the USB host sheild and an
-      Xbox 360 wireless receiver. The USB host shield I used, occupied pin 10 on the arduino board as Slave Select,
-      and pin 9 as a serial pathway to program the USB host shield. It may not be for all shields but I found this out
-      myself. For this reason I do not attach pins to sockets 9 or 10. Also I believe because pin 10 and 9 were used as SS and       Serial transmission respectively, the Arduino Uno did not work with this shield. A solution might be to externally             map pins 9 and 10 to appropriate sockets on the Arduino Uno.
+      The material needed to make the rc car compatible with an Xbox 360 controller is the USB host sheild and 
+      an Xbox 360 wireless receiver. The USB host shield I used, occupied pin 10 on the arduino board as 
+      Slave Select, and pin 9 as a serial pathway to program the USB host shield. It may not be for all 
+      shields but I found this out myself. For this reason I do not attach pins to sockets 9 or 10. Also
+      I believe because pin 10 and 9 were used as SS and Serial transmission respectively, the Arduino Uno 
+      did not work with this shield. A solution might be to externally map pins 9 and 10 to appropriate sockets 
+      on the Arduino Uno.
       
 ## [File Diagram](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Xbox360_RC_Car%20Program%20Flow.jpg):
 ![alt text]( https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Xbox360_RC_Car%20Program%20Flow.jpg "Program flow")
