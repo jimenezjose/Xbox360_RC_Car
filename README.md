@@ -2,7 +2,7 @@
 How to make a Xbox 360 controlled RC car
 
 ## [File Diagram](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Xbox360_RC_Car%20Program%20Flow.jpg):
-  [Xbox360_RC_Car.ino](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/Xbox360_RC_Car.ino)
+  ..*[Xbox360_RC_Car.ino](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/Xbox360_RC_Car.ino)
   
   [Controller.h](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/Controller.h)
   
