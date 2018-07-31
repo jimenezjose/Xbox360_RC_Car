@@ -7,7 +7,7 @@ How to make an Xbox 360 controlled RC car.
 - [L298N dual H-Bridge](https://www.aliexpress.com/item/Free-Shipping-New-Dual-H-Bridge-DC-Stepper-Motor-Drive-Controller-Board-Module-L298N-MOTOR-DRIVER/32769190826.html?spm=2114.search0104.3.1.5d6f7c3aoKtXZs&ws_ab_test=searchweb0_0,searchweb201602_4_10152_10151_10065_10344_10130_10068_10324_10547_10342_10325_10546_10343_10340_10548_10341_10545_10696_10084_10083_10618_10307_10869_10868_10059_100031_10103_10624_10623_10622_10621_10620,searchweb201603_51,ppcSwitch_4&algo_expid=cf1a614a-d31a-4e1a-860b-7835930ec4b3-0&algo_pvid=cf1a614a-d31a-4e1a-860b-7835930ec4b3&transAbTest=ae803_1&priceBeautifyAB=0)
 - [Xbox 360 wireless PC receiver](https://www.amazon.com/gp/product/B00FAS1WDG/ref=oh_aui_detailpage_o01_s01?ie=UTF8&psc=1)
 
-__Note__: 
+__Note__:
 
       The material needed to make the rc car compatible with an Xbox 360 controller is the USB host sheild and an
       Xbox 360 wireless receiver. The USB host shield I used, occupied pin 10 on the arduino board as Slave Select,
@@ -17,15 +17,15 @@ __Note__:
 ## [File Diagram](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Xbox360_RC_Car%20Program%20Flow.jpg):
 ![alt text]( https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Xbox360_RC_Car%20Program%20Flow.jpg "Program flow")
 
-  - [Xbox360_RC_Car.ino](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/Xbox360_RC_Car.ino)
+    - [Xbox360_RC_Car.ino](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/Xbox360_RC_Car.ino)
   
-  - [Controller.h](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/Controller.h)
+    - [Controller.h](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/Controller.h)
   
-  - [Controller.ino](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/Controller.ino)
+    - [Controller.ino](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/Controller.ino)
   
-  - [BluetoothTerm.h](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/BluetoothTerm.h)
+    - [BluetoothTerm.h](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/BluetoothTerm.h)
   
-  - [BluetoothTerm.ino](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/BluetoothTerm.ino)
+    - [BluetoothTerm.ino](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/BluetoothTerm.ino)
   
   
 
