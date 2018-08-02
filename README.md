@@ -1,5 +1,5 @@
 # Xbox360_RC_Car
-How to make an Xbox 360 controlled RC car. [In Progress]
+How to make an Xbox 360 controlled RC car.
 ## Materials Needed
 - Arduino Mega 2560
 - [USB Host Shield](https://www.amazon.com/gp/product/B0777DR3T6/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1)
