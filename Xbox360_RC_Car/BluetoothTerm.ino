@@ -8,14 +8,15 @@ Description:    Reduce print statements to Serial streams and handle
 ****************************************************************************/
 #include "BLuetoothTerm.h"
 
-bool disable = false; /* disable xbox controller input */
+static bool disable = false; /* disable xbox controller input */
 
 /***************************************************************************
-% Routine Name : xbox_L2
-% File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Routine Name : handleTerminal
+% File :         BluetoothTerm.ino
+% Parameters:    None
+% Description :  Reads bluetooth data into a buffer and invokes subroutune 
+%                interpretCmd
+% Return:        Nothing
 ***************************************************************************/
 void handleTerminal() {
   char buffer[ BUFFER_SIZE ] = { 0 }; /* BT terminal message */
@@ -49,31 +50,38 @@ void handleTerminal() {
 }
 
 /***************************************************************************
-% Routine Name : xbox_L2
-% File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Routine Name : interpretCmd
+% File :         BluetoothTerm.ino
+% Parameters:    data - String of bytes from bluetooth data buffer 
+% Description :  Invokes appropriate logic linked to command via function
+%                pointers
+% Return:        True - if valid command is parse, False - otherwise.
 ***************************************************************************/
 int interpretCmd( String data ) {
-  const String command[] = { DISABLE, ENABLE };
-  void (* toggleFunc[])() = { disableController, enableController };
+  const String command[] = { DISABLE, ENABLE, DEBUG };
+  void (* commandFunc[])() = { disableController, enableController, toggleDebug };
 
   for( int index = 0; index < NUM_OF_COMMANDS; index++ ) {
     /* validate commands string */
     if( command[ index ].equals(data) ) {
       /* executing command */
-      toggleFunc[ index ]();
+      commandFunc[ index ]();
       BT.println( "found command" );
       return true;
     }
   }
 
-  BT.println( "Re-enter command" );
-  
+  BT.println( "Re-enter command" ); 
   return false;
 }
 
+/***************************************************************************
+% Routine Name : clearSerialBuff
+% File :         BluetoothTerm.ino
+% Parameters:    None 
+% Description :  Clears Serial buffer residue
+% Return:        Nothing
+***************************************************************************/
 void clearSerialBuff() {
   while( BT.available() > 0 ) {
     BT.read();
@@ -81,22 +89,22 @@ void clearSerialBuff() {
 }
 
 /***************************************************************************
-% Routine Name : xbox_L2
-% File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Routine Name : terminalOverride
+% File :         BluetoothTerm.ino
+% Parameters:    None 
+% Description :  Overrides Xbox 360 controller input.
+% Return:        True if Xbox controller is disabled, or false otherwise.
 ***************************************************************************/
 bool terminalOverride() {
   return disable;
 }
 
 /***************************************************************************
-% Routine Name : xbox_L2
+% Routine Name : disableController
 % File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Parameters:    None
+% Description :  Sets global variable disable to true.
+% Return:        Nothing
 ***************************************************************************/
 void disableController() {
   println( "controller disabled" );
@@ -104,11 +112,12 @@ void disableController() {
 }
 
 /***************************************************************************
-% Routine Name : xbox_L2
-% File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Routine Name : enableController
+% File :         BluetoothTerm.ino
+% Parameters:    Nothing
+% Description :  Enables contrioller input to be valid again by setting
+%                global variable disable to false.
+% Return:        Nothing
 ***************************************************************************/
 void enableController() {
   println( "controller enabled" );
@@ -116,64 +125,80 @@ void enableController() {
 }
 
 /***************************************************************************
-% Routine Name : xbox_L2
-% File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Routine Name : toggleDebug
+% File :         BluetoothTerm.ino
+% Parameters:    None 
+% Description :  Toggle the state of the global variable debug
+% Return:        Nothing
 ***************************************************************************/
-int print( String message ) {
+void toggleDebug() {
+  debug = !debug;
+}
+
+/***************************************************************************
+% Routine Name : print
+% File :         BluetoothTerm.ino
+% Parameters:    message - string to casted to serial and bluetooth streams
+% Description :  Emulate original print() subroutine in the Stream class
+% Return:        Number of bytes written to print streams
+***************************************************************************/
+long print( String message ) {
   Serial.print( message );
   BT.print( message );
-  return 0;
+  return sizeof( message );
 }
 
 /***************************************************************************
-% Routine Name : xbox_L2
-% File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Routine Name : print
+% File :         BluetoothTerm.ino
+% Parameters:    number - integer to be printed to the print streams
+% Description :  Emulate original print() subroutine in the Stream class
+% Return:        Number of bytes written to print streams
 ***************************************************************************/
-int print( long number ) {
-  print( String(number) );
-  return 0;
+long print( long number ) {
+  String message = String( number );
+  print( message );
+  return sizeof( message );
 }
 
 /***************************************************************************
-% Routine Name : xbox_L2
-% File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Routine Name : println
+% File :         BluetoothTerm.ino
+% Parameters:    message - string to casted to serial and bluetooth streams
+% Description :  Emulate original println() subroutine in the Stream class
+% Return:        Number of bytes written to print streams.
 ***************************************************************************/
-int println( String message ) {
+long println( String message ) {
   Serial.println( message );
   BT.println( message );
-  return 0;
+  /* + 1 for newline */
+  return sizeof( message ) + 1;
 }
 
 /***************************************************************************
-% Routine Name : xbox_L2
-% File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Routine Name : println
+% File :         BluetoothTerm.ino
+% Parameters:    number - number to casted to the print streams
+% Description :  Emulate original println() subroutine in the Stream class
+% Return:        Number of bytes written to print streams
 ***************************************************************************/
-int println( long number ) {
-  println( String(number) );
-  return 0;
+long println( long number ) {
+  String message = String( number );
+  println( message );
+  /* + 1 for newline */
+  return sizeof( message ) + 1;
 }
 
 /***************************************************************************
-% Routine Name : xbox_L2
-% File :         Controller.ino
-% Parameters:    Xbox - xbox360 receiver 
-% Description :  -
-% Return:        - 
+% Routine Name : println
+% File :         BluetoothTerm.ino
+% Parameters:    None
+% Description :  Emulate original println() subroutine in the Stream class
+% Return:        Number of bytes written to print streams
 ***************************************************************************/
-int println() {
-  print( "\n" );
-  return 0;
+long println() {
+  String newline = "\n";
+  print( newline );
+  return sizeof( newline );
 }
 

@@ -88,7 +88,10 @@ void loop() {
   
   if( terminalOverride() ) {
     /* Terminal command to disable controller input */
-    return;
+    velocity = 0;
+    turn = 0;
+    motor.setM1Velocity( velocity );
+    motor.setM2Velocity( turn );
   }
   else if( Xbox.XboxReceiverConnected && Xbox.Xbox360Connected[ PLAYER_ONE ] ) {
     /* Player One connected to Xbox Receiver */

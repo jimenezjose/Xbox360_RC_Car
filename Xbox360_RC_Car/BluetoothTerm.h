@@ -6,7 +6,8 @@
 #define BT_TX_DELAY 2
 #define DISABLE "disable controller"
 #define ENABLE  "enable controller"
-#define NUM_OF_COMMANDS 2
+#define DEBUG   "debug"
+#define NUM_OF_COMMANDS 3
 
 void handleTerminal( void );
 bool interpretCmd( void );
@@ -15,12 +16,12 @@ void clearSerialBuff( void );
 bool terminalOverride( void );
 void disableControler( void );
 void enableController( void );
+void toggleDebug( void );
 
-
-int print( long );
-int print( String );
-int println( long );
-int println( String );
-int println( void );
+long print( long );
+long print( String );
+long println( long );
+long println( String );
+long println( void );
 
 #endif
