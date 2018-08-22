@@ -1,6 +1,8 @@
 #ifndef BLUETOOTH_TERM_H 
 #define BLUETOOTH_TERM_H /* multiple inclusion guard */
 
+#define BUFFER_SIZE 3
+
 #define BT_TX_DELAY 2
 #define DISABLE "disable controller"
 #define ENABLE  "enable controller"
@@ -8,6 +10,7 @@
 
 void handleTerminal( void );
 bool interpretCmd( void );
+void clearSerialBuff( void );
 
 bool terminalOverride( void );
 void disableControler( void );

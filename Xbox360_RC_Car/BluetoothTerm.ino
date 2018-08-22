@@ -18,8 +18,8 @@ bool disable = false; /* disable xbox controller input */
 % Return:        - 
 ***************************************************************************/
 void handleTerminal() {
-  char buffer[] = { 0 }; /* BT terminal message */
-  int bytesRead = 0; /* number of read bytes */
+  char buffer[ BUFFER_SIZE ] = { 0 }; /* BT terminal message */
+  int index = 0; /* number of read bytes */
   
   if( BT.available() == 0 ) {
     /* no incomming bluetooth data */
@@ -27,15 +27,25 @@ void handleTerminal() {
   }
 
   while( BT.available() > 0 ) {
-    /* flush Serial bluetooth bytes into string */
-    message += char( BT.read() );
-    bytesRead++;
+    /* read Serial bluetooth bytes into buffer */
+    if( index == BUFFER_SIZE - 1 ) {
+      /* flush out the overflow of data */
+      clearSerialBuff();
+      break;
+    }
+    buffer[ index ] = BT.read();
+    index++;
     delay( BT_TX_DELAY );
   }
 
-  interpretCmd( message ); /* interpret bluetooth data */
+  /* null termination for string conversion */ 
+  buffer[ index ] = '\0'; 
+
+  String data = String( buffer );
+
+  interpretCmd( data ); /* interpret bluetooth data */
   print( "command entered: " );
-  println( message );
+  println( data );
 }
 
 /***************************************************************************
@@ -62,6 +72,12 @@ int interpretCmd( String data ) {
   BT.println( "Re-enter command" );
   
   return false;
+}
+
+void clearSerialBuff() {
+  while( BT.available() > 0 ) {
+    BT.read();
+  }
 }
 
 /***************************************************************************
