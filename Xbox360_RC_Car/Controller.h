@@ -12,8 +12,8 @@
 #define MIN_HAT_VAL -32768
 #define MAX_KNOB_VAL 1023
 #define MAX_SPEED    400
-#define MIN_TURN     -200
-#define MAX_TURN     200
+#define MIN_TURN     -150
+#define MAX_TURN     150
 #define MAX_TRIGGER  255
 #define MAX_RUMBLE   255
 /* number of buttons per category */
@@ -36,6 +36,11 @@
 
 #define TRIGGER_LIST             { L2, R2 }
 #define XBOX_TRIGGER_FUNCS       { xbox_L2, xbox_R2 }
+
+#define USAGE "\nUsage:\nLeft Joy Stick  - Throttle\nRight Joy Stick - Steering\n\
+Back            - Toggle Controller Feedback System\nStart           - Print Usag\
+e & Turns on Player One Led on Controller\nXbox Home       - Controller Battery S\
+tatus\nR1              - Toggle Velocity and Steering Notifications\n"
                                 
 /****************************************************************************
                            Xbox 360 Controller

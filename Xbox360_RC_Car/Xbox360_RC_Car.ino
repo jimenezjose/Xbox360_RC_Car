@@ -1,15 +1,15 @@
 /****************************************************************************
 
                                                 Jose Jorge Jimenez-Olivas
-                                                July 25, 2018
+                                                September 10, 2018
 
                            XBOX 360 RC Car
 
 File Name:       Xbox_RC_CarHack.ino
 Description:     This program is for a fully functional rc car, controlled
                  with a wireless XBOX 360 controller, HC-06 bluetooth module -
-		 for quick debugging and inspections on the fly, 2 dc motors,
-		 and a L298N dual H-bridge for PWM control of the dc motors.
+		             for quick debugging and inspections on the fly, 2 dc motors,
+		             and a L298N dual H-bridge for PWM control of the dc motors.
 Sources of Help: Example sketch for the Xbox Wireless Reciver library 
                    - developed by Kristian Lauszus
                    - Example "XBOXRECV"
@@ -56,7 +56,7 @@ int leftRumble  = 0;       /* feedback system for velocity current draw */
 int rightRumble = 0;       /* feedback for steering current draw */
 bool joystickData = false; /* indicate end of one cycle of joystick data */
 bool feedbackOn = true;    /* Controller feedback request */
-bool debug = false;        /* debug statements */
+bool debug = true;         /* debug statements */
 
 void setup() {
   Serial.begin( 115200 );
@@ -79,6 +79,8 @@ void setup() {
   }
   print(F("\r\nXbox Wireless Receiver Library Started"));
   println();
+
+  println( USAGE );
 }
 
 void loop() {
@@ -92,6 +94,7 @@ void loop() {
     turn = 0;
     motor.setM1Velocity( velocity );
     motor.setM2Velocity( turn );
+    Xbox.setRumbleOff();
   }
   else if( Xbox.XboxReceiverConnected && Xbox.Xbox360Connected[ PLAYER_ONE ] ) {
     /* Player One connected to Xbox Receiver */
@@ -140,6 +143,7 @@ void loop() {
     turn = 0;
     motor.setM1Velocity( velocity );
     motor.setM2Velocity( turn );
+    Xbox.setRumbleOff();
   }
   
 }

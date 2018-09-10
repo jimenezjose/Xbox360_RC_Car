@@ -35,6 +35,7 @@ void handleTerminal() {
       break;
     }
     buffer[ index ] = BT.read();
+    if( buffer[ index ] == '\n' ) buffer[ index ] = '\0';
     index++;
     delay( BT_TX_DELAY );
   }
@@ -44,9 +45,14 @@ void handleTerminal() {
 
   String data = String( buffer );
 
-  interpretCmd( data ); /* interpret bluetooth data */
-  print( "command entered: " );
+  print( "\ncommand entered: " );
   println( data );
+
+  /* interpret bluetooth data */
+  if( interpretCmd(data) == false) {
+    /* notify user of invalid command */
+    println( "Invalid Command" );
+  }
 }
 
 /***************************************************************************
@@ -58,20 +64,20 @@ void handleTerminal() {
 % Return:        True - if valid command is parse, False - otherwise.
 ***************************************************************************/
 int interpretCmd( String data ) {
-  const String command[] = { DISABLE, ENABLE, DEBUG };
-  void (* commandFunc[])() = { disableController, enableController, toggleDebug };
+  const String command[] = COMMANDS;
+  void (* commandFunc[])() = COMMAND_FUNCS;
+  int index = 0;
 
-  for( int index = 0; index < NUM_OF_COMMANDS; index++ ) {
+  while( command[ index ] != "" ) {
     /* validate commands string */
     if( command[ index ].equals(data) ) {
       /* executing command */
       commandFunc[ index ]();
-      BT.println( "found command" );
       return true;
     }
+    index++;
   }
-
-  BT.println( "Re-enter command" ); 
+  
   return false;
 }
 
@@ -128,11 +134,44 @@ void enableController() {
 % Routine Name : toggleDebug
 % File :         BluetoothTerm.ino
 % Parameters:    None 
-% Description :  Toggle the state of the global variable debug
+% Description :  Toggles Velocity and Steering notifications from Xbox 
+%                controller
 % Return:        Nothing
 ***************************************************************************/
 void toggleDebug() {
   debug = !debug;
+
+  print( "Velocity and Steering Notification Turned: " );
+
+  if( debug ) {
+    println( "ON" );
+  }
+  else {
+    println( "OFF" );
+  }
+  
+}
+
+/***************************************************************************
+% Routine Name : help
+% File :         BluetoothTerm.ino
+% Parameters:    None 
+% Description :  Notifies user of all terminal commands and their usages
+% Return:        Nothing
+***************************************************************************/
+void help() {
+  println( HELP );
+}
+
+/***************************************************************************
+% Routine Name : controllerHelp
+% File :         BluetoothTerm.ino
+% Parameters:    None 
+% Description :  Notifies user of Xbox controller button mapping
+% Return:        Nothing
+***************************************************************************/
+void controllerHelp() {
+  println( USAGE );
 }
 
 /***************************************************************************
