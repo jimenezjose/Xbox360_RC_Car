@@ -30,7 +30,7 @@ __Note__:
   
   - [BluetoothTerm.ino](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/Xbox360_RC_Car/BluetoothTerm.ino)
   
-## [Schematic Overview]()  
+## [Schematic Overview](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Schematic.jpg)  
   
 
 ## [Images](https://github.com/jimenezjose/Xbox360_RC_Car/tree/master/images):
