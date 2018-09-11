@@ -8,15 +8,15 @@
 File Name:       Xbox_RC_CarHack.ino
 Description:     This program is for a fully functional rc car, controlled
                  with a wireless XBOX 360 controller, HC-06 bluetooth module -
-		             for quick debugging and inspections on the fly, 2 dc motors,
-		             and a L298N dual H-bridge for PWM control of the dc motors.
+                 for quick debugging and inspections on the fly, 2 dc motors,
+                 and a L298N dual H-bridge for PWM control of the dc motors.
 Sources of Help: Example sketch for the Xbox Wireless Reciver library 
                    - developed by Kristian Lauszus
                    - Example "XBOXRECV"
 Libraries Used:
-                 - https://github.com/jimenezjose/L298N
-                 - https://github.com/PaulStoffregen/SoftwareSerial
-                 - https://github.com/felis/USB_Host_Shield_2.0
+                  - https://github.com/jimenezjose/L298N
+                  - https://github.com/PaulStoffregen/SoftwareSerial
+                  - https://github.com/felis/USB_Host_Shield_2.0
 ****************************************************************************/
 
 #include <L298N.h> 
@@ -85,15 +85,11 @@ void setup() {
 
 void loop() {
   Usb.Task();  /* retrieve new data from usb port */  
-
   handleTerminal(); /* handles and interprets terminal commands */
   
   if( terminalOverride() ) {
     /* Terminal command to disable controller input */
-    velocity = 0;
-    turn = 0;
-    motor.setM1Velocity( velocity );
-    motor.setM2Velocity( turn );
+    emergencyBrake();
     Xbox.setRumbleOff();
   }
   else if( Xbox.XboxReceiverConnected && Xbox.Xbox360Connected[ PLAYER_ONE ] ) {
@@ -107,8 +103,9 @@ void loop() {
     }
     
     if( joystickData ) {
-      /* end of current joystick data */
+      /* Simultaneous left and right joystick data is streamed together */
       if( debug ) {
+        /* Single line stream of data for both joysticks */
         println();
       }
       joystickData = false;
@@ -139,13 +136,26 @@ void loop() {
   else if( velocity || turn ) {
     /* Failure Safety */
     println( "Xbox 360 controller out of Range." );
+    emergencyBrake();
+    Xbox.setRumbleOff();
+  }
+  
+}
+
+/***************************************************************************
+% Routine Name : emergencyBrake
+% File :         Xbox360_RC_Car
+% Parameters:    None
+% Description :  Immediately stops the car from motion and steering. In other
+%                words, in regards to the electrical car system, 0 volts will
+%                be applied to both the steering and acceleratinig dc motors.
+% Return:        Nothing
+***************************************************************************/
+void emergencyBrake() {
     velocity = 0;
     turn = 0;
     motor.setM1Velocity( velocity );
     motor.setM2Velocity( turn );
-    Xbox.setRumbleOff();
-  }
-  
 }
 
 
