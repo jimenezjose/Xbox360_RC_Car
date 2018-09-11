@@ -30,8 +30,8 @@ How to make an Xbox 360 controlled RC car.
       the second terminal window you opened. In my case I would enter, "cat > cu.HC-06-DevB". This 
       command redirects keyboard input into the wireless bluetooth module and thats it!
       
-*For more insight check out my Youtube video, [Arduino Bluetooth Terminal on Mac](https://www.youtube.com/watch?v=YZt1I9wl40M&t=3s), that demonstrates how
-to emulate a bluetooth terminal on your Mac.*
+*For more insight check out my Youtube video, [Arduino Bluetooth Terminal on Mac](https://www.youtube.com/watch?v=YZt1I9wl40M&t=3s), 
+that demonstrates how to emulate a bluetooth terminal on your Mac.*
 
 
 - [L298N dual H-Bridge](https://www.aliexpress.com/item/Free-Shipping-New-Dual-H-Bridge-DC-Stepper-Motor-Drive-Controller-Board-Module-L298N-MOTOR-DRIVER/32769190826.html?spm=2114.search0104.3.1.5d6f7c3aoKtXZs&ws_ab_test=searchweb0_0,searchweb201602_4_10152_10151_10065_10344_10130_10068_10324_10547_10342_10325_10546_10343_10340_10548_10341_10545_10696_10084_10083_10618_10307_10869_10868_10059_100031_10103_10624_10623_10622_10621_10620,searchweb201603_51,ppcSwitch_4&algo_expid=cf1a614a-d31a-4e1a-860b-7835930ec4b3-0&algo_pvid=cf1a614a-d31a-4e1a-860b-7835930ec4b3&transAbTest=ae803_1&priceBeautifyAB=0)
