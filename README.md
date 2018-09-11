@@ -25,7 +25,7 @@ How to make an Xbox 360 controlled RC car.
   *For more insight check out my Youtube video, [Arduino Bluetooth Terminal on Mac](https://www.youtube.com/watch?v=YZt1I9wl40M&t=3s), that
   demonstrates how to emulate a bluetooth terminal on your Mac.*
   
-        How? Open two seperate terminal windows, enter "cd /dev/" to change into the device directory
+        Just tell me! Open two seperate terminal windows, enter "cd /dev/" to change into the device directory
       located in root. Then search for your HC-06 Bluetooth device with "ls cu.*". In my case, my 
       HC-06 device file is named "cu.HC-06-DevB". Once your device file is correctly identified 
       use the command "cat (the device file)". For example, in my case I would enter "cat 
