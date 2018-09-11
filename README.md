@@ -26,7 +26,7 @@ __Material Explanation__:
 
 [Xbox 360 wireless PC receiver](https://www.amazon.com/gp/product/B00FAS1WDG/ref=oh_aui_detailpage_o01_s01?ie=UTF8&psc=1)
      
-      Pertaining an official Microsoft Xbox 360 PC reciever secures the wireless controller connection. The 
+        Pertaining an official Microsoft Xbox 360 PC reciever secures the wireless controller connection. The 
       advantages of using an Xbox 360 controller for an RC project is the concept of being able to hack 
       an Xbox controller to intuitively navigate a car just like a car game emulation. A disadvantage to 
       using an Xbox controller, is the low controller reachability of 20ft. But that's fine the Xbox 360 
@@ -61,3 +61,5 @@ __Note__:
 ## [Images](https://github.com/jimenezjose/Xbox360_RC_Car/tree/master/images):
 
 ![alt text]( https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/RC_Car_With_Controller.JPG "RC car")
+
+__
