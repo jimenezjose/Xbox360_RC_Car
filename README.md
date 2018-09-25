@@ -30,7 +30,7 @@ How to make an Xbox 360 controlled RC car.
       case, my HC-06 device file is named "cu.HC-06-DevB". Once your device file is correctly  
       identified use the command "cat (the device file)". For example, in my case I would enter  
       "cat cu.HC-06-DevB". Now this will only display content that is being sent from your bluetooth
-      module. To send bytes of data to your HC-06, enter the command, "cat > (the device file)" on 
+      module. To send bytes of data to your HC-06, enter the command, "cat > /dev/(the device file)" on 
       the second terminal window you opened. In my case I would enter, "cat > cu.HC-06-DevB". This 
       command redirects keyboard input into the wireless bluetooth module and thats it!
 
