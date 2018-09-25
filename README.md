@@ -11,7 +11,7 @@ How to make an Xbox 360 controlled RC car.
 
 - [USB Host Shield](https://www.amazon.com/gp/product/B0777DR3T6/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1):
 
-      Allows fast serial communication with the Xbox 360 PC reciever. 
+        Allows fast serial communication with the Xbox 360 PC reciever using the SPI protocol.
 
 - [HC-06](https://www.aliexpress.com/item/hc-06-HC-06-RF-Wireless-Bluetooth-Transceiver-Slave-Module-RS232-TTL-to-UART-converter-and/32342784842.html?spm=2114.search0104.3.1.79ce13d2qctt7T&ws_ab_test=searchweb0_0,searchweb201602_4_10152_10151_10065_10344_10130_10068_10324_10547_10342_10325_10546_10343_10340_10548_10341_10545_10696_10084_10083_10618_10307_10869_10868_10059_100031_10103_10624_10623_10622_10621_10620,searchweb201603_51,ppcSwitch_4&algo_expid=158111f5-c4fc-42ac-b751-206c2e3157c1-0&algo_pvid=158111f5-c4fc-42ac-b751-206c2e3157c1&transAbTest=ae803_1&priceBeautifyAB=0): 
 
