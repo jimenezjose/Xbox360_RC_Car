@@ -22,7 +22,7 @@ How to make an Xbox 360 controlled RC car.
       The way I worked around this problem is by emulating a bluetooth terminal on my MacBook Pro 
       using its built in terminal. 
       
-  *For more insight check out my Youtube video, [Arduino Bluetooth Terminal on Mac](https://www.youtube.com/watch?v=YZt1I9wl40M&t=3s), that
+  *For more insight check out my Youtube video, [Arduino Bluetooth Terminal on Mac](https://www.youtube.com/watch?v=Y0Y6UQC1j8k&t=1s), that
   demonstrates how to emulate a bluetooth terminal on your Mac.*
   
         Just tell me. Open two seperate terminal windows, enter "cd /dev/" to change into the device 
