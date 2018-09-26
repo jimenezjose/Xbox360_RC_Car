@@ -82,6 +82,10 @@ __Note__:
 
 ![alt text]( https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/RC_Car_With_Controller.JPG "RC car")
 
+## [Video]
+
+[![Watch the video](https://www.youtube.com/watch?v=8JZqnDAhync)](https://www.youtube.com/watch?v=8JZqnDAhync)
+
 ## Not Perfect:
 
       At the beginnig of the project I had a lot of issues with the power distribution of the car. I was 
