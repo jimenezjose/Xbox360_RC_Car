@@ -84,7 +84,7 @@ __Note__:
 
 ## [Video]
 
-[![Watch the video](https://www.youtube.com/watch?v=8JZqnDAhync)](https://www.youtube.com/watch?v=8JZqnDAhync)
+[![Watch the video](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Youtube%20Image.png)](https://www.youtube.com/watch?v=8JZqnDAhync)
 
 ## Not Perfect:
 
