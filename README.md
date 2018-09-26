@@ -62,26 +62,6 @@ __Note__:
       Also I believe because pin 10 and 9 were used as SS and Serial transmission respectively, the Arduino 
       Uno did not work with this shield. 
       
-## Not Perfect:
-
-      At the beginnig of the project I had a lot of issues with the power distribution of the car. I was 
-    using Pololu's DRV8835 Dual Motor Driver Shield for Arduino with a 9.6V lithium ion battery and the
-    car would draw more than 40.0 mA on the Arduino's I/O pins causing the Arduino to reset. So, I had 
-    to externally power and control the two DC motors using a L298N dual H-Bridge. Although the Arduino
-    did not reset anymore, there was a drastic drop in speed. Due to decrease in speed, I increased the 
-    voltage of the battery to 20 volts. I picked 20 volts only for the convenience of having a 20v DeWalt
-    drill battery laying around. Now, the speed increased as predicted, but the steering DC motor had to 
-    be replaced twice. The steering DC motor fried due to supplying an over voltage to a 9-12v motor.
-    The motor was getting an 18v PWM, 18 becuase the L98N had a voltage drop of about 2 volts. 
-    
-      A solution to this problem is to use two L298N dual H-Bridge modules, one for the accelerating DC 
-    motor and the second for steering DC motor. This will allow the capability of using a lower voltage
-    battery specifically for the steering DC motor. The disadvantage to this solution, is the amount of
-    real estate it will take on the car. Since, I did not have the space for a second L298N module and 
-    the 9.6v battery, I decided not to include it. Not including it meant I had to limit the drive time
-    of the RC car to about 7 minutes, which was fine with me.
-    
-      
 ## [File Diagram](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Xbox360_RC_Car%20Program%20Flow.jpg):
 ![alt text]( https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Xbox360_RC_Car%20Program%20Flow.jpg "Program flow")
 
@@ -101,5 +81,24 @@ __Note__:
 ## [Images](https://github.com/jimenezjose/Xbox360_RC_Car/tree/master/images):
 
 ![alt text]( https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/RC_Car_With_Controller.JPG "RC car")
+
+## Not Perfect:
+
+      At the beginnig of the project I had a lot of issues with the power distribution of the car. I was 
+    using Pololu's DRV8835 Dual Motor Driver Shield for Arduino with a 9.6V lithium ion battery and the
+    car would draw more than 40.0 mA on the Arduino's I/O pins causing the Arduino to reset. So, I had 
+    to externally power and control the two DC motors using a L298N dual H-Bridge. Although the Arduino
+    did not reset anymore, there was a drastic drop in speed. Due to decrease in speed, I increased the 
+    voltage of the battery to 20 volts. I picked 20 volts only for the convenience of having a 20v DeWalt
+    drill battery laying around. Now, the speed increased as predicted, but the steering DC motor had to 
+    be replaced twice. The steering DC motor fried due to supplying an over voltage to a 9-12v motor.
+    The motor was getting an 18v PWM, 18 becuase the L98N had a voltage drop of about 2 volts. 
+    
+      A solution to this problem is to use two L298N dual H-Bridge modules, one for the accelerating DC 
+    motor and the second for steering DC motor. This will allow the capability of using a lower voltage
+    battery specifically for the steering DC motor. The disadvantage to this solution, is the amount of
+    real estate it will take on the car. Since, I did not have the space for a second L298N module and 
+    the 9.6v battery, I decided not to include it. Not including it meant I had to limit the drive time
+    of the RC car to about 7 minutes, which was fine with me.
 
 __
