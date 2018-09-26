@@ -62,7 +62,7 @@ __Note__:
       Also I believe because pin 10 and 9 were used as SS and Serial transmission respectively, the Arduino 
       Uno did not work with this shield. 
       
-__Not Perfect__:
+## Not Perfect:
 
       At the beginnig of the project I had a lot of issues with the power distribution of the car. I was 
     using Pololu's DRV8835 Dual Motor Driver Shield for Arduino with a 9.6V lithium ion battery and the
