@@ -82,7 +82,7 @@ __Note__:
 
 ![alt text]( https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/RC_Car_With_Controller.JPG "RC car")
 
-## [Video]
+## [Video](https://www.youtube.com/watch?v=8JZqnDAhync)
 
 [![Watch the video](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Youtube%20Image.png)](https://www.youtube.com/watch?v=8JZqnDAhync)
 
