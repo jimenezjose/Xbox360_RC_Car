@@ -86,7 +86,7 @@ __Note__:
 
 ## [Videos](https://www.youtube.com/channel/UCbjWL-dwOju9F-2Tt2TZt5A)
 
-[![Watch the video](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Youtube%20Image.png)](https://www.youtube.com/watch?v=8JZqnDAhync)
+[![Watch the video](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Youtube%20Image.png)](https://www.youtube.com/watch?v=KNwCAxgSPRE)
 
 [![Watch the video](https://github.com/jimenezjose/Xbox360_RC_Car/blob/master/images/Bluetooth%20Term%20Youtube%20Image.png)](https://www.youtube.com/watch?v=Y0Y6UQC1j8k)
 
