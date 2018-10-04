@@ -43,8 +43,8 @@ USB Usb;                   /* USB port object */
 XBOXRECV Xbox( &Usb );     /* Xbox reciever connected to usb port */
 L298N motor( 7, 6, 5, 4, 12, 11 );  /* IN1, IN2, IN3, IN4, ENA, ENB */
 
-//SoftwareSerial BT( 15, 14);
-#define BT Serial3  /* Software serial did not allow reading capabilities */
+//SoftwareSerial BT( 15, 14); /* Software serial did not allow reading data */
+#define BT Serial3         /* Therefore a hardware serial port is used */
 
 /* Pin variables */
 const int knobPin = A0;
@@ -103,7 +103,7 @@ void loop() {
     }
     
     if( joystickData ) {
-      /* Simultaneous left and right joystick data is streamed together */
+      /* Check for valid joystick input (due to joystick threshold) */
       if( debug ) {
         /* Single line stream of data for both joysticks */
         println();
@@ -135,7 +135,7 @@ void loop() {
   }
   else if( velocity || turn ) {
     /* Failure Safety */
-    println( "Xbox 360 controller out of Range." );
+    println( "Xbox 360 Controller Out of Range." );
     emergencyBrake();
     Xbox.setRumbleOff();
   }
