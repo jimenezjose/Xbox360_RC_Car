@@ -100,8 +100,10 @@ __Note__:
     did not reset anymore, there was a drastic drop in speed. Due to decrease in speed, I increased the 
     voltage of the battery to 20 volts. I picked 20 volts only for the convenience of having a 20v DeWalt
     drill battery laying around. Now, the speed increased as predicted, but the steering DC motor had to 
-    be replaced twice. The steering DC motor fried due to supplying an over voltage to a 9-12v motor.
-    The motor was getting an 18v PWM, 18 becuase the L98N had a voltage drop of about 2 volts. 
+    be replaced twice. The motor was getting an 18v PWM, 18v becuase the L298N had a voltage drop of 
+    about 2 volts. Hence, the steering DC motor fried due to having suppllied an over voltage of 18v to 
+    a 9-12v motor.
+     
     
       A solution to this problem is to use two L298N dual H-Bridge modules, one for the accelerating DC 
     motor and the second for steering DC motor. This will allow the capability of using a lower voltage
