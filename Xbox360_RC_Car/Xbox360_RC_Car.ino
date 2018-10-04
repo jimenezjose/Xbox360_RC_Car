@@ -84,7 +84,7 @@ void setup() {
 }
 
 void loop() {
-  Usb.Task();  /* retrieve new data from usb port */  
+  Usb.Task();       /* retrieve new data from usb port */  
   handleTerminal(); /* handles and interprets terminal commands */
   
   if( terminalOverride() ) {
@@ -126,10 +126,10 @@ void loop() {
     }
 
     if( feedbackOn ) {
-      /* controller feedback system - rumble current draw from dc motors */
+      /* controller feedback system - rumble proportional to current draw */
       leftRumble  = map( abs(velocity), 0, MAX_SPEED, 0, MAX_RUMBLE );
       rightRumble = map( abs(turn), 0, MAX_TURN, 0, MAX_RUMBLE );
-      Xbox.setRumbleOn( leftRumble / VEL_RUMBLE, rightRumble / TUR_RUMBLE );
+      Xbox.setRumbleOn( leftRumble / VEL_RUMBLE, rightRumble / TURN_RUMBLE );
     }
     
   }

@@ -22,7 +22,7 @@
 #define NUM_OF_TRIGGERS      2
 /* rumble intensity */
 #define VEL_RUMBLE 4
-#define TUR_RUMBLE 2
+#define TURN_RUMBLE 2
 
 #define BUTTON_CLICK_LIST        { A, B, Y, X, L1, R1, BACK, START, XBOX, UP,\
                                    DOWN, LEFT, RIGHT, L3, R3 }               
