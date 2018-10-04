@@ -110,6 +110,6 @@ __Note__:
     battery specifically for the steering DC motor. The disadvantage to this solution, is the amount of
     real estate it will take on the car. Since, I did not have the space for a second L298N module and 
     the 9.6v battery, I decided not to include it. Not including it meant I had to limit the drive time
-    of the RC car to about 7 minutes, which was fine with me.
+    of the RC car to about 7 minutes, which is an ideal usage time for the project.
 
 __
