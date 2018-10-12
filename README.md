@@ -17,11 +17,11 @@ How to make an Xbox 360 controlled RC car.
 
         Enables wireless data communication via bluetooth. Powerful accessory to emulate a bluetooth
       terminal and serial data monitor. The advantage of using a bluetooth module, is that it is 
-      easily compatible with all industry devices such as a Samsung Galaxy and Andoids and there 
-      are is a plethora of arduino applications for such projects open to the public in the Google
+      easily compatible with most industry devices such as Samsung Galaxies and Andoids. There 
+      is a plethora of arduino bluetooth apps for such projects open to the public in the Google
       PlayStore. A disadvantage is that IOS devices cannot communicate with the HC-06 bluetooth module
-      due to liscensing. Which in my situation was a significant disadvantage because I own an iPhone. 
-      The way I worked around this problem is by emulating a bluetooth terminal on my MacBook Pro 
+      due to liscensing. As an iPhone user, this was a problem so I propose a work around.
+      The way I worked around this problem was by emulating a bluetooth serial monitor on my MacBook Pro 
       using its built in terminal. 
       
   *For more insight check out my Youtube video, [Arduino Bluetooth Terminal on Mac](https://www.youtube.com/watch?v=Y0Y6UQC1j8k&t=1s), that
